@@ -1,0 +1,67 @@
+.logo {
+  width: 150px;
+}
+
+.header {
+  margin: 20px 0px;
+}
+
+.ta-center {
+  text-align: center;
+}
+
+.ta-left {
+  text-align: left;
+}
+
+.marque {
+  line-height: 2.2em;
+}
+
+.vm {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.vm\+ {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.vm\+\+ {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.hero {
+  background-image: url(/img/hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 683px;
+  margin-bottom: 100px;
+}
+
+.hero .slogan {
+  padding: 200px 0px;
+}
+
+.wmate {
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+h1 { font-size: 2em; }
+
+.btn_yellow {
+  background-color: #FFCC01 !important;
+  border-color: #FFCC01  !important;
+  color: #000 !important;
+}
+
+.btn_yellow:hover {
+  background-color: #FFD738 !important;
+  border-color: #FFD738  !important;
+}
