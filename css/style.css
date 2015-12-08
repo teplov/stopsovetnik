@@ -33,6 +33,14 @@
   margin-bottom: 60px;
 }
 
+.bigger {
+  font-size: 1.5em;
+}
+
+.smaller {
+  font-size: 0.8em;
+}
+
 .hero {
   background-image: url(../img/hero.jpg);
   background-position: center;
