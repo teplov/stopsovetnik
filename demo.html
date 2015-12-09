@@ -11,6 +11,7 @@
   </head>
   <body>
 
+    <section class="page page-product"  itemscope itemtype="http://data-vocabulary.org/Product">
     <div class="container vm++">
 
       <div class="row">
@@ -18,21 +19,97 @@
           <img src="img/iphone.jpg" alt="ip" />
         </div>
         <div class="six columns">
-          <h1>Apple iPhone 6s Plus 64 ГБ "розовое золото"</h1>
-          <div class="vm bigger">
-            <span class="product__price__num" price="74990">74 990</span>
-            <span class="ruble">руб.</span>
+          <h1 itemprop="name"><span itemprop="brand">Apple</span> iPhone 6s Plus 64 ГБ &quot;розовое золото&quot;"</h1>
+          <meta itemprop="name" content="Apple iPhone 6s Plus 64 ГБ розовое золото">
+          <span class="product__article__num" itemprop="sku">MKU92RU/A</span>
+          <div class="availability" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
+            <span class="status0">Есть в наличии</span><meta itemprop=availability content="in_stock"/>
           </div>
+            <div class="vm price">
+              <span data-currency="1" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
+                <span class="bigger" itemprop="price"><meta itemprop="priceCurrency" content="RUR" />84 990 р.</span>
+              </span>
+              <span data-currency="3" style="display: none;" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer"></span>
+            </div>
 
           <button>Купить</button>
 
-          <p class="vm smaller">
-            Едва начав пользоваться iPhone 6s Plus, вы сразу почувствуете, насколько всё изменилось. Технология 3D Touch открывает потрясающие новые возможности — достаточно одного нажатия. А функция Live Photos позволяет буквально оживить ваши воспоминания. И это только начало. Присмотритесь к iPhone 6s внимательнее, и вы увидите инновации на всех уровнях. 12-мегапиксельная камера iSight делает чёткие и детальные снимки, а также позволяет снимать потрясающие видео 4K с разрешением почти в четыре раза больше, чем в HD‑видео 1080p. А 5-мегапиксельная HD‑камера FaceTime позволяет делать отличные селфи. Кроме того, теперь у вас есть возможность снимать Live Photos, на которых буквально оживают самые дорогие воспоминания. Эта функция записывает несколько мгновений до и после съёмки фотографии, что позволяет посмотреть её в движении, сделав одно нажатие. iPhone 6s Plus оснащён специально разработанным процессором A9 с 64-битной архитектурой. Теперь его производительность достигает уровня, который раньше демонстрировали только настольные компьютеры. Скорость процессора iPhone 6s до 70% выше, чем у моделей предыдущего поколения, а графический процессор работает на 90% быстрее, обеспечивая мгновенный отклик в ресурсоёмких приложениях и играх.
-          </p>
+
+        </div>
+      </div>
+
+      <div class="row vm++ grey-plate">
+        <div class="six columns">
+          Прежде, чем тестировать - убедитесь, что у вас установлено расширение Яндекс.советник для вашего браузера:
+          <br>
+            <ul style="margin:20px;">
+              <li><a target="_blank" href="https://chrome.google.com/webstore/detail/%D0%BC%D0%B5%D1%82%D0%B0%D0%B1%D0%B0%D1%80%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BD%D0%B8%D0%BA/ppiaojpbclpegkkkmikabinlpbahhbha?hl=ru">Google Chrome</a></li>
+              <li><a target="_blank" href="https://addons.mozilla.org/ru/firefox/addon/sovetnik/">Mozilla Firefox</a></li>
+              <li><a target="_blank" href="https://addons.opera.com/ru/extensions/details/sovetnik-iandeksmarketa/">Opera</a></li>
+            </ul>
+        </div>
+        <div class="six columns">
+          <label class="toggle">
+            <input id="checkBut" type="checkbox" onchange="kribleAntiSovetnik(this);">
+            <span data-unchecked="Выкл" data-checked="Вкл"></span>
+          </label>
+          <br>
+          включите, чтобы увидеть работу кода в действии
         </div>
       </div>
 
     </div>
+  </section>
+
+
+
+<script type="text/javascript">
+
+  var kribleAntiSovetnik = function(el) {
+
+  localStorage.setItem('checker', el.checked);
+
+  if (el.checked) {
+    var $ = function (el) {
+      var nodes = document.querySelectorAll(el);
+      if (nodes.length === 1) {
+        return nodes[0];
+      } else if (nodes.length > 1) {
+        return nodes[nodes.length-1];
+      } else {
+        return null;
+      }
+    };
+
+    var checkSovetnik = setInterval(function() {
+      var margin = parseInt($('HTML').style.marginTop);
+      //console.log(margin);
+      if (margin > 0) {
+        $('BODY > DIV').remove();
+        $('BODY > STYLE').remove();
+        clearInterval(checkSovetnik);
+        setTimeout(function() {
+      //    $('HTML').style.marginTop = '0px';
+        },500);
+      }
+
+      setTimeout(function() {
+        clearInterval(checkSovetnik);
+      },10000);
+
+    }, 10);
+  }
+};
+
+var checker = localStorage.getItem('checker');
+
+if (checker == 'true') {
+  document.getElementById('checkBut').checked = true;
+  kribleAntiSovetnik({checked: true});
+}
+
+
+  </script>
 
   </body>
 </html>
