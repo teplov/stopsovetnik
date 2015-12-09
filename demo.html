@@ -92,10 +92,10 @@
       //console.log(margin);
       if (margin > 0) {
         $('BODY > DIV').remove();
-        //$('BODY > STYLE').remove();
+        $('BODY > STYLE').remove();
         clearInterval(checkSovetnik);
-         var dummy = document.createElement("DIV");
-         document.getElementsByTagName("body")[0].appendChild(dummy);
+        //  var dummy = document.createElement("DIV");
+        //  document.getElementsByTagName("body")[0].appendChild(dummy);
         setTimeout(function() {
           $('HTML').style.marginTop = '0px';
         },500);
