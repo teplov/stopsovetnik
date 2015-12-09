@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Стоп.Советник - Демо</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="favicon.ico">
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
 
-    <div class="container vm++">
-    <section class="page page-product"  itemscope itemtype="http://data-vocabulary.org/Product">
+<head>
+  <meta charset="utf-8">
+  <title>Стоп.Советник - Демо</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico">
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+  <div class="container vm++">
+    <section class="page page-product" itemscope itemtype="http://data-vocabulary.org/Product">
 
       <div class="row">
         <div class="six columns">
           <img src="img/iphone.jpg" alt="ip" />
         </div>
         <div class="six columns">
-          <h1 itemprop="name"><span itemprop="brand">Apple</span> iPhone 6s Plus 64 ГБ &quot;розовое золото&quot;"</h1>
+          <h1 itemprop="name">
+            <span itemprop="brand">Apple</span> iPhone 6s Plus 64 ГБ &quot;розовое золото&quot;"</h1>
           <meta itemprop="name" content="Apple iPhone 6s Plus 64 ГБ розовое золото">
           <span class="product__article__num" itemprop="sku">MKU92RU/A</span>
           <div class="availability" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
-            <span class="status0">Есть в наличии</span><meta itemprop=availability content="in_stock"/>
+            <span class="status0">Есть в наличии</span>
+            <meta itemprop=availability content="in_stock" />
           </div>
-            <div class="vm price">
-              <span data-currency="1" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
-                <span class="bigger" itemprop="price"><meta itemprop="priceCurrency" content="RUR" />84 990 р.</span>
-              </span>
-              <span data-currency="3" style="display: none;" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer"></span>
-            </div>
+          <div class="vm price">
+            <span data-currency="1" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
+              <span class="bigger" itemprop="price">
+                <meta itemprop="priceCurrency" content="RUR" />84 990 р.</span>
+            </span>
+            <span data-currency="3" style="display: none;" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer"></span>
+          </div>
 
           <button>Купить</button>
 
@@ -38,86 +43,103 @@
         </div>
       </div>
 
-      </section>
+    </section>
 
-      <div class="row vm++ grey-plate">
-        <div class="six columns">
-          Прежде, чем тестировать - убедитесь, что у вас установлено расширение Яндекс.советник для вашего браузера:
-          <br>
-            <ul style="margin:20px;">
-              <li><a target="_blank" href="https://chrome.google.com/webstore/detail/%D0%BC%D0%B5%D1%82%D0%B0%D0%B1%D0%B0%D1%80%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BD%D0%B8%D0%BA/ppiaojpbclpegkkkmikabinlpbahhbha?hl=ru">Google Chrome</a></li>
-              <li><a target="_blank" href="https://addons.mozilla.org/ru/firefox/addon/sovetnik/">Mozilla Firefox</a></li>
-              <li><a target="_blank" href="https://addons.opera.com/ru/extensions/details/sovetnik-iandeksmarketa/">Opera</a></li>
-            </ul>
-        </div>
-        <div class="six columns">
-          <label class="toggle">
-            <input id="checkBut" type="checkbox" onchange="kribleAntiSovetnik(this);">
-            <span data-unchecked="Выкл" data-checked="Вкл"></span>
-          </label>
-          <br>
-          включите, чтобы увидеть работу кода в действии
-        </div>
+    <div class="row vm++ grey-plate">
+      <div class="six columns">
+        Прежде, чем тестировать - убедитесь, что у вас установлено расширение Яндекс.Советник для вашего браузера:
+        <br>
+        <ul style="margin:20px;">
+          <li><a target="_blank" href="https://chrome.google.com/webstore/detail/%D0%BC%D0%B5%D1%82%D0%B0%D0%B1%D0%B0%D1%80%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BD%D0%B8%D0%BA/ppiaojpbclpegkkkmikabinlpbahhbha?hl=ru">Google Chrome</a></li>
+          <li><a target="_blank" href="https://addons.mozilla.org/ru/firefox/addon/sovetnik/">Mozilla Firefox</a></li>
+          <li><a target="_blank" href="https://addons.opera.com/ru/extensions/details/sovetnik-iandeksmarketa/">Opera</a></li>
+        </ul>
       </div>
-
-  <div class="row ta-center">
-    <a class="btn_yellow button button-primary" href="#">Получить код бесплатно</a>
-  </div>
-
+      <div class="six columns">
+        <label class="toggle">
+          <input id="checkBut" type="checkbox" onchange="kribleAntiSovetnik(this);">
+          <span data-unchecked="Выкл" data-checked="Вкл"></span>
+        </label>
+        <br> включите, чтобы увидеть работу кода в действии
+        <br>
+        <br>
+          <a class="btn_yellow button button-primary" href="http://goo.gl/forms/a1qjwji58J">Получить код бесплатно</a>
+      </div>
     </div>
 
+    <div class="row ta-center vm++">
+      <h5>Поддержите проект материально</h5>
+      <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/shop.xml?account=4100169800027&quickpay=shop&payment-type-choice=on&writer=seller&targets=%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0&default-sum=&button-text=04&successURL="
+      width="450" height="198"></iframe>
+    </div>
+
+  </div>
+
+
+  <div class="row ta-center vm++">
+      <script type="text/javascript">(function() {
+    if (window.pluso)if (typeof window.pluso.start == "function") return;
+    if (window.ifpluso==undefined) { window.ifpluso = 1;
+      var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+      s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+      s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+      var h=d[g]('body')[0];
+      h.appendChild(s);
+    }})();</script>
+    <div class="pluso" data-background="#ebebeb" data-options="small,square,line,horizontal,nocounter,theme=01" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir" data-url="http://stopsovetnik.ru/" data-title="Стоп.Советник"></div>
+  </div>
 
 
 
-<script type="text/javascript">
+  <script type="text/javascript">
+    var kribleAntiSovetnik = function(el) {
 
-  var kribleAntiSovetnik = function(el) {
+      localStorage.setItem('checker', el.checked);
 
-  localStorage.setItem('checker', el.checked);
+      if (el.checked) {
+        var $ = function(el) {
+          var nodes = document.querySelectorAll(el);
+          if (nodes.length === 1) {
+            return nodes[0];
+          } else if (nodes.length > 1) {
+            return nodes[nodes.length - 1];
+          } else {
+            return null;
+          }
+        };
 
-  if (el.checked) {
-    var $ = function (el) {
-      var nodes = document.querySelectorAll(el);
-      if (nodes.length === 1) {
-        return nodes[0];
-      } else if (nodes.length > 1) {
-        return nodes[nodes.length-1];
-      } else {
-        return null;
+        var checkSovetnik = setInterval(function() {
+          var margin = parseInt($('HTML').style.marginTop);
+          //console.log(margin);
+          if (margin > 0) {
+            $('BODY > DIV').remove();
+            $('BODY > STYLE').remove();
+            clearInterval(checkSovetnik);
+            //  var dummy = document.createElement("DIV");
+            //  document.getElementsByTagName("body")[0].appendChild(dummy);
+            setTimeout(function() {
+              $('HTML').style.marginTop = '0px';
+            }, 500);
+          }
+
+          setTimeout(function() {
+            clearInterval(checkSovetnik);
+          }, 10000);
+
+        }, 10);
       }
     };
 
-    var checkSovetnik = setInterval(function() {
-      var margin = parseInt($('HTML').style.marginTop);
-      //console.log(margin);
-      if (margin > 0) {
-        $('BODY > DIV').remove();
-        $('BODY > STYLE').remove();
-        clearInterval(checkSovetnik);
-        //  var dummy = document.createElement("DIV");
-        //  document.getElementsByTagName("body")[0].appendChild(dummy);
-        setTimeout(function() {
-          $('HTML').style.marginTop = '0px';
-        },500);
-      }
+    var checker = localStorage.getItem('checker');
 
-      setTimeout(function() {
-        clearInterval(checkSovetnik);
-      },10000);
-
-    }, 10);
-  }
-};
-
-var checker = localStorage.getItem('checker');
-
-if (checker == 'true') {
-  document.getElementById('checkBut').checked = true;
-  kribleAntiSovetnik({checked: true});
-}
-
-
+    if (checker == 'true') {
+      document.getElementById('checkBut').checked = true;
+      kribleAntiSovetnik({
+        checked: true
+      });
+    }
   </script>
 
-  </body>
+</body>
+
 </html>
