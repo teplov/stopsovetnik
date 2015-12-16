@@ -76,6 +76,16 @@ h1 { font-size: 2em; }
   border-color: #FFD738  !important;
 }
 
+.btn_grey {
+  background-color: #ccc !important;
+  border-color: #ccc  !important;
+  color: #000 !important;
+}
+
+.btn_grey:hover {
+  background-color: #ddd !important;
+  border-color: #ddd  !important;
+}
 
 
 .toggle {
@@ -114,7 +124,7 @@ h1 { font-size: 2em; }
     content: attr(data-unchecked);
     display: block;
     width: 50%;
-    background-color: #525252;
+    background-color: #ee5252;
     border-radius: 0.15em;
     box-shadow: inset 0 0.1em 0 rgba(255, 255, 255, 0.3);
     color: #fff;
@@ -123,7 +133,7 @@ h1 { font-size: 2em; }
   /* Checked state */
   .toggle :checked + span:before {
     content: attr(data-checked);
-    background-color: #0099CC;
+    background-color: #00CC99;
     }
 
     @media (min-width: 320px) {
