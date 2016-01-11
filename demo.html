@@ -74,7 +74,7 @@
       </div>
       <div class="six columns">
         <label class="toggle">
-          <input id="checkBut" type="checkbox" onchange="kribleAntiSovetnik(this);">
+          <input id="checkBut" type="checkbox" onchange="StopSovetnik(this);">
           <span data-unchecked="Выкл" data-checked="Вкл"></span>
         </label>
         <br> <b>включите, чтобы увидеть работу кода в действии</b>
@@ -118,7 +118,7 @@
 
    // Не копируйте этот код, т.к. он является демонстрационным и не содержит обновлений и патчей.
    // Для получения кода используйте кнопку "Получить код" на сайте http://stopsovetnik.ru/
-    var kribleAntiSovetnik = function(el) {
+    var StopSovetnik = function(el) {
 
       localStorage.setItem('checker', el.checked);
 
@@ -160,7 +160,7 @@
 
     if (checker == 'true') {
       document.getElementById('checkBut').checked = true;
-      kribleAntiSovetnik({
+      StopSovetnik({
         checked: true
       });
     }
