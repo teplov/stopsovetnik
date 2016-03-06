@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="859px" height="557px" viewBox="0 0 859 557" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-2">
+            <g id="Group" opacity="0.89114972" transform="translate(128.000000, 58.000000)">
+                <path d="M575.778834,67.1931471 C590.812669,70.8361749 603,86.3226591 603,101.786544 L603,340.213456 C603,355.675834 590.807423,371.165096 575.778834,374.806853 L301.5,441.270627 L301.5,0.729372937 L575.778834,67.1931471 Z" id="Rectangle-1" fill="#D0011B"></path>
+                <path d="M27.2211662,66.4637742 C12.1873312,70.1068019 0,85.5932862 0,101.057171 L0,339.484083 C0,354.946461 12.1925771,370.435723 27.2211662,374.07748 L301.5,440.541254 L301.5,0 L27.2211662,66.4637742 Z" id="Rectangle-1-Copy" fill="#000000"></path>
+            </g>
+            <text id="Оформите-платную-под" font-family="Roboto-Light, Roboto" font-size="36" font-weight="300" fill="#FFFFFF">
+                <tspan x="166" y="186">Оформите </tspan>
+                <tspan x="166" y="234">платную </tspan>
+                <tspan x="166" y="282">подписку - </tspan>
+            </text>
+            <text id="получите-особые-возм" font-family="Roboto-Light, Roboto" font-size="36" font-weight="300" fill="#FFFFFF">
+                <tspan x="545.105469" y="289">получите </tspan>
+                <tspan x="573.880859" y="337">особые </tspan>
+                <tspan x="461.328125" y="385">возможности! </tspan>
+            </text>
+        </g>
+    </g>
+</svg>
