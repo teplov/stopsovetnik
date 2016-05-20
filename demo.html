@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="favicon.ico">
   <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-  <!-- <script src="lib/stopsovetnik_1.0.6-debug.js"></script> -->
 
 
     <!-- Google Tag Manager -->
@@ -162,26 +161,9 @@
                   }
                 }
                 if (found) {
-                  //document.body.removeChild(m);
-                  //document.documentElement.style.marginTop = '';
-                  for (var i = 0; i < m.childNodes.length; i++) {
-                      var el = m.childNodes[i];
+                  m.style.transform = 'translate(-10000px, -10000px)';
+                  document.documentElement.style.marginTop = '';
 
-                      if (el.title) {
-                        el.innerHTML = 'Возможно, на этом сайте самая выгодная цена!';
-                      }
-                      if (i == 5) {
-                        el.innerHTML = '';
-                      }
-                  }
-
-                  var fake = document.createElement('div');
-                  fake.id = m.id;
-                  fake.className  = m.className;
-                  fake.style.cssText = 'top: -1px !important; display: table !important; opacity: 1 !important;';
-                  fake.innerHTML = m.innerHTML;
-
-                  document.body.appendChild(fake);
 
                   stopSovetnikObserver.disconnect();
                   yaCounter34110810.reachGoal('stopsovetnik');
@@ -193,7 +175,7 @@
         var marginAnimationObserver = new MutationObserver( function(){
           var mt = document.documentElement.style.marginTop;
           if (mt && parseInt(mt) > 0) {
-          //  document.documentElement.style.marginTop = '';
+            document.documentElement.style.marginTop = '';
           }
         }
         );
