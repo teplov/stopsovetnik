@@ -3,7 +3,7 @@ $(document).ready(function() {
 
   var hash = window.location.hash || null;
 
-console.log(hash);
+//console.log(hash);
   if (hash && hash === '#lightbox') {
       $('.overlay, .lightbox').show();
   }
