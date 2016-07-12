@@ -130,6 +130,31 @@
 
         var StopSovetnik = function(el) {
 
+            var YandexDesktopFound = false;
+            var YandexMobileFound = false;
+            var SuperMegaBestFound = false;
+
+            var YandexDesktopCheck = {
+                'z-index': '2147483647',
+                'display': 'table',
+                'position': 'fixed'
+            };
+
+            var YandexMobileCheck = {
+                'z-index': '2147483647',
+                'display': 'block',
+                'position': 'fixed',
+                'bottom': '0px',
+                'height': '56em'
+            };
+
+            var SuperMegaBestCheck = {
+                'z-index': '2147483647',
+                'display': 'block',
+                'position': 'fixed'
+            };
+
+
             localStorage.setItem('checker', el.checked);
             if ('MutationObserver' in window && el.checked) {
 
@@ -137,29 +162,6 @@
 
                     allmutations.map(function(mr) {
                         var m = mr.addedNodes[0];
-                        var YandexDesktopFound = false;
-                        var YandexMobileFound = false;
-                        var SuperMegaBestFound = false;
-
-                        var YandexDesktopCheck = {
-                            'z-index': '2147483647',
-                            'display': 'table',
-                            'position': 'fixed'
-                        };
-
-                        var YandexMobileCheck = {
-                            'z-index': '2147483647',
-                            'display': 'block',
-                            'position': 'fixed',
-                            'bottom': '0px',
-                            'height': '56em'
-                        };
-
-                        var SuperMegaBestCheck = {
-                            'z-index': '2147483647',
-                            'display': 'block',
-                            'position': 'fixed'
-                        };
 
                         if (m && m.tagName === 'DIV') {
 
