@@ -28,7 +28,7 @@
                 <a href="/"><img class="logo" src="img/stoplogo.png" alt="Стоп.Советник" /></a>
             </div>
             <div class="ten columns marque">
-                &mdash; заблокируйте работу Яндекс.Советник на своем сайте!!
+                &mdash; заблокируйте работу Яндекс.Советник на своем сайте!
             </div>
         </div>
 
@@ -176,7 +176,7 @@
 
                                 }
 
-                              //  if (m && m.tagName === 'DIV' && m.firstChild && m.firstChild.tagName === 'DIV') {
+                                if (m && m.tagName === 'DIV' && m.firstChild && m.firstChild.tagName === 'DIV') {
 
                                     for (var c in YandexMobileCheck) {
                                         if (window.getComputedStyle(m.firstChild).getPropertyValue(c) === YandexMobileCheck[c]) {
@@ -189,10 +189,10 @@
                                         }
                                     }
 
-                            //    }
+                                }
 
 
-                            //if (m && m.tagName === 'DIV' && m.firstChild && m.firstChild.tagName === 'IFRAME') {
+                            if (m && m.tagName === 'DIV' && m.firstChild && m.firstChild.tagName === 'IFRAME') {
                                 m = m.firstChild;
                                 for (var c in SuperMegaBestCheck) {
                                     if (window.getComputedStyle(m).getPropertyValue(c) === SuperMegaBestCheck[c]) {
@@ -202,7 +202,7 @@
                                         break;
                                     }
                                 }
-                          //  }
+                            }
 
                             if (YandexDesktopFound || SuperMegaBestFound) {
                                 m.style.transform = 'translate(-10000px, -10000px)';
