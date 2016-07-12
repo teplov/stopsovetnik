@@ -28,7 +28,7 @@
                 <a href="/"><img class="logo" src="img/stoplogo.png" alt="Стоп.Советник" /></a>
             </div>
             <div class="ten columns marque">
-                &mdash; заблокируйте работу Яндекс.Советник на своем сайте!
+                &mdash; заблокируйте работу Яндекс.Советник на своем сайте!!!
             </div>
         </div>
 
@@ -177,10 +177,10 @@
                         }
 
                         if (m && m.tagName === 'DIV' && m.firstChild && m.firstChild.tagName === 'DIV') {
-                            console.log(m);
+                            console.log(m.firstChild);
 
                             for (var c in YandexMobileCheck) {
-                                if (window.getComputedStyle(m).getPropertyValue(c) === YandexMobileCheck[c]) {
+                                if (window.getComputedStyle(m.firstChild).getPropertyValue(c) === YandexMobileCheck[c]) {
                                     YandexMobileFound = true;
                                 } else {
                                     YandexMobileFound = false;
