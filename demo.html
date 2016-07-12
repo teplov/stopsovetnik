@@ -204,10 +204,12 @@
 
                         }
 
+                        console.log('YandexMobileFound', YandexMobileFound);
+
                         if (YandexMobileFound) {
 
                           document.body.removeChild(m);
-                          
+
                           setTimeout(function() {
                               stopSovetnikObserver.disconnect();
                           }, 10000);
