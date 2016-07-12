@@ -194,13 +194,24 @@
                             }
                         }
 
-                        if (YandexDesktopFound || YandexMobileFound || SuperMegaBestFound) {
+                        if (YandexDesktopFound || SuperMegaBestFound) {
 
                             m.style.transform = 'translate(-10000px, -10000px)';
 
                             setTimeout(function() {
                                 stopSovetnikObserver.disconnect();
                             }, 10000);
+
+                        }
+
+                        if (YandexMobileFound) {
+
+                          document.body.removeChild(m);
+                          
+                          setTimeout(function() {
+                              stopSovetnikObserver.disconnect();
+                          }, 10000);
+
 
                         }
 
