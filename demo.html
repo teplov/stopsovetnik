@@ -128,7 +128,6 @@
         // Не копируйте этот код, т.к. он является демонстрационным и не содержит обновлений и патчей.
         // Для получения кода используйте кнопку "Получить код" на сайте http://stopsovetnik.ru/
 
-
         var StopSovetnik = function(el) {
 
             localStorage.setItem('checker', el.checked);
@@ -163,6 +162,12 @@
                         };
 
                         if (m && m.tagName === 'DIV') {
+
+                          if (navigator.userAgent.search(/YaBrowser/i)>0) {
+                            console.log('YaBrowser');
+                            console.log(m);
+                          }
+
                             for (var c in YandexDesktopCheck) {
                                 if (m.id != 'sspanel' && window.getComputedStyle(m).getPropertyValue(c) === YandexDesktopCheck[c]) {
                                     YandexDesktopFound = true;
@@ -204,7 +209,7 @@
 
                         }
 
-                        console.log('YandexMobileFound', YandexMobileFound);
+
 
                         if (YandexMobileFound) {
 
