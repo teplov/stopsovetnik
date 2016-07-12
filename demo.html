@@ -28,7 +28,7 @@
                 <a href="/"><img class="logo" src="img/stoplogo.png" alt="Стоп.Советник" /></a>
             </div>
             <div class="ten columns marque">
-                &mdash; заблокируйте работу Яндекс.Советник на своем сайте!!!
+                &mdash; заблокируйте работу Яндекс.Советник на своем сайте!!
             </div>
         </div>
 
@@ -160,118 +160,106 @@
 
                 var stopSovetnikObserver = new MutationObserver(function(allmutations) {
 
-                    allmutations.map(function(mr) {
-                        var m = mr.addedNodes[0];
+                        allmutations.map(function(mr) {
+                                var m = mr.addedNodes[0];
 
-                        if (m && m.tagName === 'DIV') {
+                                if (m && m.tagName === 'DIV') {
 
-                            for (var c in YandexDesktopCheck) {
-                                if (window.getComputedStyle(m).getPropertyValue(c) === YandexDesktopCheck[c]) {
-                                    YandexDesktopFound = true;
-                                } else {
-                                    YandexDesktopFound = false;
-                                    break;
+                                    for (var c in YandexDesktopCheck) {
+                                        if (window.getComputedStyle(m).getPropertyValue(c) === YandexDesktopCheck[c]) {
+                                            YandexDesktopFound = true;
+                                        } else {
+                                            YandexDesktopFound = false;
+                                            break;
+                                        }
+                                    }
+
+                                }
+
+                                if (m && m.tagName === 'DIV' && m.firstChild && m.firstChild.tagName === 'DIV') {
+
+                                    for (var c in YandexMobileCheck) {
+                                        if (window.getComputedStyle(m.firstChild).getPropertyValue(c) === YandexMobileCheck[c]) {
+                                            if (navigator.userAgent.search(/YaBrowser/i) > 0) {
+                                                YandexMobileFound = true;
+                                            }
+                                        } else {
+                                            YandexMobileFound = false;
+                                            break;
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                            if (m && m.tagName === 'DIV' && m.firstChild && m.firstChild.tagName === 'IFRAME') {
+                                m = m.firstChild;
+                                for (var c in SuperMegaBestCheck) {
+                                    if (window.getComputedStyle(m).getPropertyValue(c) === SuperMegaBestCheck[c]) {
+                                        SuperMegaBestFound = true;
+                                    } else {
+                                        SuperMegaBestFound = false;
+                                        break;
+                                    }
                                 }
                             }
 
-                        }
-
-                        if (m && m.tagName === 'DIV' && m.firstChild && m.firstChild.tagName === 'DIV') {
-                            console.log(m.firstChild);
-
-                            for (var c in YandexMobileCheck) {
-                              console.log(window.getComputedStyle(m.firstChild).getPropertyValue(c), YandexMobileCheck[c]);
-                                if (window.getComputedStyle(m.firstChild).getPropertyValue(c) === YandexMobileCheck[c]) {
-                                    YandexMobileFound = true;
-                                } else {
-                                    YandexMobileFound = false;
-                                    break;
-                                }
+                            if (YandexDesktopFound || SuperMegaBestFound) {
+                                m.style.transform = 'translate(-10000px, -10000px)';
                             }
 
-                            if (navigator.userAgent.search(/YaBrowser/i) > 0) {
-                                console.log('YaBrowser', YandexMobileFound);
+                            if (YandexMobileFound) {
+                                document.body.removeChild(m);
                             }
-
-
-                        }
-
-                        if (m && m.tagName === 'DIV' && m.firstChild && m.firstChild.tagName === 'IFRAME') {
-                            m = m.firstChild;
-                            for (var c in SuperMegaBestCheck) {
-                                if (window.getComputedStyle(m).getPropertyValue(c) === SuperMegaBestCheck[c]) {
-                                    SuperMegaBestFound = true;
-                                } else {
-                                    SuperMegaBestFound = false;
-                                    break;
-                                }
-                            }
-                        }
-
-                        if (YandexDesktopFound || SuperMegaBestFound) {
-
-                            m.style.transform = 'translate(-10000px, -10000px)';
-
-                            setTimeout(function() {
-                                stopSovetnikObserver.disconnect();
-                            }, 10000);
-
-                        }
-
-                        if (YandexMobileFound) {
-
-                            document.body.removeChild(m);
 
                             setTimeout(function() {
                                 stopSovetnikObserver.disconnect();
                             }, 10000);
 
 
-                        }
-
-
-                    });
+                        });
                 });
 
 
-                var marginAnimationHTMLObserver = new MutationObserver(function() {
-                    var mt = document.documentElement.style.marginTop;
-                    if (mt && parseInt(mt) > 0) {
-                        document.documentElement.style.marginTop = '';
-                    }
+            var marginAnimationHTMLObserver = new MutationObserver(function() {
+                var mt = document.documentElement.style.marginTop;
+                if (mt && parseInt(mt) > 0) {
+                    document.documentElement.style.marginTop = '';
+                }
+            });
+
+            var marginAnimationBODYObserver = new MutationObserver(function() {
+                var mt = document.body.style.marginTop;
+                if (mt && parseInt(mt) > 0) {
+                    document.body.style.marginTop = '';
+                }
+            });
+
+
+            if (stopSovetnikObserver) {
+                stopSovetnikObserver.observe(document.body, {
+                    'childList': true,
+                    'attributes': true,
+                    'attributeFilter': ['style']
                 });
-
-                var marginAnimationBODYObserver = new MutationObserver(function() {
-                    var mt = document.body.style.marginTop;
-                    if (mt && parseInt(mt) > 0) {
-                        document.body.style.marginTop = '';
-                    }
-                });
-
-
-                if (stopSovetnikObserver) {
-                    stopSovetnikObserver.observe(document.body, {
-                        'childList': true,
-                        'attributes': true,
-                        'attributeFilter': ['style']
-                    });
-                }
-
-                if (marginAnimationHTMLObserver) {
-                    marginAnimationHTMLObserver.observe(document.documentElement, {
-                        'attributes': true,
-                        'attributeFilter': ['style']
-                    });
-                }
-
-                if (marginAnimationBODYObserver) {
-                    marginAnimationBODYObserver.observe(document.body, {
-                        'attributes': true,
-                        'attributeFilter': ['style']
-                    });
-                }
-
             }
+
+            if (marginAnimationHTMLObserver) {
+                marginAnimationHTMLObserver.observe(document.documentElement, {
+                    'attributes': true,
+                    'attributeFilter': ['style']
+                });
+            }
+
+            if (marginAnimationBODYObserver) {
+                marginAnimationBODYObserver.observe(document.body, {
+                    'attributes': true,
+                    'attributeFilter': ['style']
+                });
+            }
+
+        }
 
 
 
