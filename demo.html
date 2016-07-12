@@ -131,8 +131,7 @@
         var StopSovetnik = function(el) {
 
             localStorage.setItem('checker', el.checked);
-            if ('MutationObserver' in window) {
-            //if ('MutationObserver' in window && el.checked) {
+            if ('MutationObserver' in window && el.checked) {
 
                 var stopSovetnikObserver = new MutationObserver(function(allmutations) {
 
@@ -165,9 +164,9 @@
                         if (m && m.tagName === 'DIV') {
 
                           console.log(m);
-                          if (navigator.userAgent.search(/YaBrowser/i)>0) {
-                            console.log('YaBrowser');
-                          }
+                          // if (navigator.userAgent.search(/YaBrowser/i)>0) {
+                          //   console.log('YaBrowser');
+                          // }
 
                             for (var c in YandexDesktopCheck) {
                                 if (window.getComputedStyle(m).getPropertyValue(c) === YandexDesktopCheck[c]) {
