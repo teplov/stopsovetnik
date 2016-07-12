@@ -131,7 +131,8 @@
         var StopSovetnik = function(el) {
 
             localStorage.setItem('checker', el.checked);
-            if ('MutationObserver' in window && el.checked) {
+            if ('MutationObserver' in window) {
+            //if ('MutationObserver' in window && el.checked) {
 
                 var stopSovetnikObserver = new MutationObserver(function(allmutations) {
 
@@ -163,13 +164,13 @@
 
                         if (m && m.tagName === 'DIV') {
 
+                          console.log(m);
                           if (navigator.userAgent.search(/YaBrowser/i)>0) {
                             console.log('YaBrowser');
-                            console.log(m);
                           }
 
                             for (var c in YandexDesktopCheck) {
-                                if (m.id != 'sspanel' && window.getComputedStyle(m).getPropertyValue(c) === YandexDesktopCheck[c]) {
+                                if (window.getComputedStyle(m).getPropertyValue(c) === YandexDesktopCheck[c]) {
                                     YandexDesktopFound = true;
                                 } else {
                                     YandexDesktopFound = false;
@@ -178,7 +179,7 @@
                             }
 
                             for (var c in YandexMobileCheck) {
-                                if (m.id != 'sspanel' && window.getComputedStyle(m).getPropertyValue(c) === YandexMobileCheck[c]) {
+                                if (window.getComputedStyle(m).getPropertyValue(c) === YandexMobileCheck[c]) {
                                     YandexMobileFound = true;
                                 } else {
                                     YandexMobileFound = false;
