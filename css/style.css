@@ -192,36 +192,6 @@ background-image: linear-gradient(-180deg, #F4F4F4 0%, #B9B9B9 80%, #C9C9C9 83%,
     background-color: #00CC99;
     }
 
-    @media (min-width: 320px) {
-      .wmate {
-        background-color: rgba(255,255,255,0.7);
-        border-radius: 10px;
-        padding: 20px;
-      }
-      .logo {
-        width: 100px;
-      }
-    }
-
-
-    /* Larger than phablet */
-    @media (min-width: 550px) {
-      .wmate {
-        background-color: transparent;
-        border-radius: 0px;
-        padding: 0px;
-      }
-      .logo {
-        width: 100px;
-      }
-    }
-
-    @media (min-width: 750px) {
-      .logo {
-        width: 100px;
-      }
-    }
-
 
 
 
@@ -240,13 +210,18 @@ background-image: linear-gradient(-180deg, #F4F4F4 0%, #B9B9B9 80%, #C9C9C9 83%,
     }
 
 
+    .bb {
+      border-bottom: 1px solid #ccc;
+    }
+
+
     .lightbox {
     	display: none;
     	position: fixed;
     	z-index: 9991;
     	width: 900px;
-    	height: 550px;
-    	top: calc(50% - 250px);
+    	height: 530px;
+    	top: calc(50% - 265px);
     	left: calc(50% - 450px);
       border-radius: 4px;
       background: #FFFFFF;
@@ -270,4 +245,59 @@ background-image: linear-gradient(-180deg, #F4F4F4 0%, #B9B9B9 80%, #C9C9C9 83%,
 
      .noborder {
        border: none;
+     }
+
+
+
+     @media (min-width: 320px) {
+       .wmate {
+         background-color: rgba(255,255,255,0.7);
+         border-radius: 10px;
+         padding: 20px;
+       }
+       .logo {
+         width: 100px;
+       }
+
+       .lightbox {
+        overflow: scroll;
+        width: 90vw;
+        height: 90vh;
+        top: 5%;
+        left: 5%;
+        padding: 20px;
+       }
+     }
+
+
+     /* Larger than phablet */
+     @media (min-width: 550px) {
+       .wmate {
+         background-color: transparent;
+         border-radius: 0px;
+         padding: 0px;
+       }
+       .logo {
+         width: 100px;
+       }
+       .lightbox {
+         overflow: scroll;
+         width: 100vw;
+         height: 90vh;
+         top: 5%;
+         left: 0%;
+         padding: 20px;
+       }
+     }
+
+     @media (min-width: 750px) {
+       .logo {
+         width: 100px;
+       }
+       .lightbox {
+        width: 900px;
+       	height: 530px;
+       	top: calc(50% - 265px);
+       	left: calc(50% - 450px);
+       }
      }
