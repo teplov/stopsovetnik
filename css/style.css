@@ -119,6 +119,9 @@ background-image: linear-gradient(-180deg, #F4F4F4 0%, #B9B9B9 80%, #C9C9C9 83%,
     margin-top: 40px;
 }
 
+.button.narrow {
+  padding: 0px 15px;
+}
 
 
 .btn_yellow {
