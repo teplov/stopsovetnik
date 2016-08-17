@@ -267,7 +267,14 @@
 
         }
 
-
+        window.onfocus = function () {
+          stopSovetnikObserver.observe(document.body, {
+              'childList': true,
+              'attributes': true,
+              'subtree': true,
+              'attributeFilter': ['style']
+          });
+        };
 
         };
 
@@ -278,6 +285,8 @@
             StopSovetnik({
                 checked: true
             });
+
+
         }
     </script>
 
