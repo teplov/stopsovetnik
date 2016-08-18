@@ -302,6 +302,16 @@
         }
     </script -->
 
+    <script type="text/javascript">
+    var checker = localStorage.getItem('checker');
+
+    if (checker == 'true') {
+        document.getElementById('checkBut').checked = true;
+        StopSovetnik({
+            checked: true
+        });
+    }
+    </script>
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
