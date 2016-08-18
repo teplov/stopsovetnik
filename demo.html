@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="icon" href="favicon.ico"> -->
+    <script type="text/javascript" src="http://cdn-stopsovetnik.herokuapp.com/ss.min.js"></script>
     <link rel="shortcut icon" href="http://stopsovetnik.ru/img/avatar.png">
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
@@ -130,7 +131,7 @@
 
     </div>
 
-    <script type="text/javascript">
+    <!-- script type="text/javascript">
         // Не копируйте этот код, т.к. он является демонстрационным и не содержит обновлений и патчей.
         // Для получения кода используйте кнопку "Получить код" на сайте http://stopsovetnik.ru/
 
@@ -141,9 +142,11 @@
             var SuperMegaBestFound = false;
 
             var YandexDesktopCheck = {
-                'z-index': '2147483647',
+                //'z-index': '2147483647',
+                'top': '-1px',
                 'display': 'table',
-                'position': 'fixed'
+                'opacity': '1'
+                //'position': 'fixed'
             };
 
             var YandexMobileCheck = {
@@ -182,6 +185,8 @@
 
                                 }
 
+
+
                                 if (m && m.tagName === 'DIV' && m.firstChild && m.firstChild.tagName === 'DIV') {
 
                                     for (var c in YandexMobileCheck) {
@@ -208,6 +213,13 @@
                                         break;
                                     }
                                 }
+                            }
+
+                            if (m && m.tagName === 'STYLE') {
+                              if (/market_context_headcrab_container_relative/.test(m.innerHTML)) {
+                                document.body.removeChild(m);
+                                console.log('STYLE removed');
+                              }
                             }
 
                             if (YandexDesktopFound || SuperMegaBestFound) {
@@ -288,7 +300,7 @@
 
 
         }
-    </script>
+    </script -->
 
 
     <!-- Yandex.Metrika counter -->
