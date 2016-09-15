@@ -271,6 +271,10 @@ table.compact TD {
 table.form tr,
 table.form th { border: none; }
 
+.bg-grey {
+  background: #eee;
+}
+
 
      @media (min-width: 320px) {
        .wmate {
