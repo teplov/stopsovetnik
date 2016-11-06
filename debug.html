@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Стоп.Советник - Демо</title>
-    <!-- <meta http-equiv="refresh" content="0;http://stopsov.ucoz.net/demo.htm"> -->
     <meta property="og:title" content="Стоп.Советник">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://stopsovetnik.ru/">
@@ -16,9 +15,152 @@
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="icon" href="favicon.ico"> -->
-    <script type="text/javascript" src="http://cdn.stpsv.online/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://cdn-stopsovetnik.herokuapp.com/ss.min.js"></script> -->
     <link rel="shortcut icon" href="http://stopsovetnik.ru/img/avatar.png">
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript">
+
+(function() {
+
+    var stopSovetnik = function() {
+
+        var hash = window.location.hash || false;
+
+        var log = function(t) {
+            if (hash && hash === '#ssdebug') console.log(t);
+        };
+
+        if (!window['MutationObserver']) {
+            log('MutationObserver not supported!');
+            return false;
+        }
+
+        if (navigator.userAgent.indexOf("MSIE") != -1 || navigator.userAgent.indexOf("Trident") != -1 || navigator.userAgent.indexOf("Edge") != -1 || navigator.userAgent.indexOf("Opera") != -1) {
+            log('IE or Edge');
+            return false;
+        }
+
+        var ga = function(evnt, eventCategory, eventAction, eventLabel) {
+
+            if (typeof dataLayer !== "undefined") {
+
+                dataLayer.push({
+                    'event': evnt,
+                    'eventCategory': eventCategory,
+                    'eventAction': eventAction,
+                    'eventLabel': eventLabel
+                });
+
+                return true;
+            } else {
+                return false;
+            }
+        };
+
+
+        var stopSovetnikObserver = new MutationObserver(function(allmutations) {
+            allmutations.map(function(mr) {
+                var m = mr.addedNodes[0];
+
+                if (m && /market_context_headcrab_container/.test(m.innerHTML)) {
+                    log('Mutation STYLE', m);
+                    m.parentNode.removeChild(m);
+                }
+
+                if (m && /sovetnik.market.yandex.ru/.test(m.innerHTML)) {
+
+                    var divNode = null;
+                    var children = m.parentNode.childNodes;
+
+                    for (var i = 0; i < children.length; i++) {
+                        var child = children[i];
+                        if (child && child.tagName === 'DIV') {
+                          if (child.parentNode.tagName === 'BODY') {
+                            divNode = child;
+                          } else {
+                            divNode = child.parentNode;
+                          }
+                        }
+                    }
+
+                    if (divNode.style) divNode.style.position = 'absolute';
+                    if (divNode.style) divNode.style.transform = 'translate(-10000px, -10000px)';
+
+                    log('Mutation DIV', m);
+                }
+
+
+                if (m && /supermegabest.com/.test(m.innerHTML)) {
+                    log('Mutation supermegabest.com', m);
+                    m.parentNode.removeChild(m);
+                }
+
+
+            });
+        });
+
+
+
+        var marginAnimationHTMLObserver = new MutationObserver(function() {
+            var mt = document.documentElement.style.marginTop;
+            if (mt && parseInt(mt) > 0) {
+                document.documentElement.style.marginTop = '';
+            }
+        });
+
+        var marginAnimationBODYObserver = new MutationObserver(function() {
+            var mt = document.body.style.marginTop;
+            if (mt && parseInt(mt) > 0) {
+                document.body.style.marginTop = '';
+            }
+        });
+
+        var runObserver = function() {
+            if (!document.body) {
+                setTimeout(runObserver, 100);
+                return;
+            }
+
+            if (stopSovetnikObserver) {
+                stopSovetnikObserver.observe(document.body, {
+                    'childList': true,
+                    'attributes': true,
+                    'subtree': true,
+                    'attributeFilter': ['style']
+                });
+            }
+
+            if (marginAnimationHTMLObserver) {
+                marginAnimationHTMLObserver.observe(document.documentElement, {
+                    'attributes': true,
+                    'attributeFilter': ['style']
+                });
+            }
+
+            if (marginAnimationBODYObserver) {
+                marginAnimationBODYObserver.observe(document.body, {
+                    'attributes': true,
+                    'attributeFilter': ['style']
+                });
+            }
+        }
+
+
+
+        if (!(hash && hash === '#ssoff')) {
+            runObserver();
+        }
+
+    };
+
+
+    stopSovetnik();
+
+})();
+
+
+</script>
 
 </head>
 
@@ -39,37 +181,36 @@
         </div>
       </div>
 
-        <section class="page page-product vm++" itemscope itemtype="http://data-vocabulary.org/Product">
+      <section class="page page-product vm++" itemscope itemtype="http://data-vocabulary.org/Product">
 
-            <div class="row">
-                <div class="six columns">
-                    <img src="img/iphone.jpg" alt="ip" />
-                </div>
-                <div class="six columns">
-                    <h1 itemprop="name">
-            <span itemprop="brand">Apple</span> iPhone 6s 64Gb &#171;Розовое золото&#187;</h1>
-                    <meta itemprop="name" content="Смартфон Apple iPhone 6s 64Gb &#171;Розовое золото&#187;">
-                    <span class="product__article__num" itemprop="sku">MKU92RU/A</span>
-                    <div class="availability" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
-                        <span class="status0">Есть в наличии</span>
-                        <meta itemprop=availability content="in_stock" />
-                    </div>
-                    <div class="vm price">
-                        <span data-currency="1" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
-              <span class="bigger" itemprop="price">
-                <meta itemprop="priceCurrency" content="RUB"/>
-                    <meta itemprop="price" content="85000">85 000 р.</span>
-                        </span>
-                        <span data-currency="3" style="display: none;" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer"></span>
-                    </div>
+          <div class="row">
+              <div class="six columns">
+                  <img src="http://stopsovetnik.ru/img/iphone.jpg" alt="ip" />
+              </div>
+              <div class="six columns">
+                  <h1 itemprop="name">
+          <span itemprop="brand">Apple</span> Смартфон Apple iPhone 6s 64Gb &#171;Розовое золото&#187;</h1>
+                  <meta itemprop="name" content="Смартфон Apple iPhone 6s 64Gb &#171;Розовое золото&#187;">
+                  <div class="availability" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
+                      <span class="status0">Есть в наличии</span>
+<link itemprop="availability" href="http://schema.org/InStock" rel="alternate">
+                  </div>
+                  <div class="vm price">
+                      <span data-currency="1" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
+<meta itemprop="priceCurrency" content="RUB"/>
+                  <meta itemprop="price" content="85000">
+            <span class="bigger">85 000 р.</span>
+                      </span>
+                      <span data-currency="3" style="display: none;" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer"></span>
+                  </div>
 
-                    <button>Купить</button>
+                  <button>Купить</button>
 
 
-                </div>
-            </div>
+              </div>
+          </div>
 
-        </section>
+      </section>
 
         <div class="row vm++ grey-plate">
             <div class="six columns">
@@ -93,6 +234,13 @@
                 <!-- <a class="btn_grey button button-primary" onclick="yaCounter34110810.reachGoal('getCode'); return true;" href="/#lightbox">Получить код бесплатно</a> -->
             </div>
         </div>
+
+        <!-- <div class="row ta-center vm++">
+            <h5>Поддержите проект материально</h5>
+            <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/shop.xml?account=4100169800027&quickpay=shop&payment-type-choice=on&writer=seller&targets=%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0&default-sum=100.00&button-text=04&successURL="
+                width="450" height="198"></iframe>
+        </div> -->
+
 
 
 
@@ -126,11 +274,11 @@
 
     </div>
 
-    <script type="text/javascript">
+    <!-- script type="text/javascript">
         // Не копируйте этот код, т.к. он является демонстрационным и не содержит обновлений и патчей.
         // Для получения кода используйте кнопку "Получить код" на сайте http://stopsovetnik.ru/
 
-        var stopSovetnik = function(el) {
+        var StopSovetnik = function(el) {
 
             var YandexDesktopFound = false;
             var YandexMobileFound = false;
@@ -285,6 +433,27 @@
 
         };
 
+        var checker = localStorage.getItem('checker');
+
+        if (checker == 'true') {
+            document.getElementById('checkBut').checked = true;
+            StopSovetnik({
+                checked: true
+            });
+
+
+        }
+    </script -->
+
+    <script type="text/javascript">
+    var checker = localStorage.getItem('checker');
+
+    if (checker == 'true') {
+        document.getElementById('checkBut').checked = true;
+        StopSovetnik({
+            checked: true
+        });
+    }
     </script>
 
     <!-- Yandex.Metrika counter -->
